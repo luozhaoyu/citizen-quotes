@@ -52,7 +52,7 @@ class MaxentWrapper(object):
         '''
         Internal method to train and return a NLTK maxent classifier.
         ''' 
-        data = [(p.text, p.quote) for p in train_query]
+        data = [(p.text, p.quote) for p in self.train]
         train_set = [(get_features(n), g) for (n, g) in data]
         return MaxentClassifier.train(train_set, algorithm=algo, trace=trace, max_iter=max_iter)
 
